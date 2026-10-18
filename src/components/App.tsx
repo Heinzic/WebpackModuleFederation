@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './App.scss'
 
 export function App() {
 
@@ -7,7 +8,7 @@ export function App() {
         <div>
             {count}
             <button onClick={() => setCount((prev) => prev + 1)} >+</button>
-            <button onClick={() => setCount((prev) => prev - 1)} >-</button>
+            <button onClick={() => setCount((prev) => prev - 1)} ><span>fdsfds</span></button>
         </div>
     );
 }
