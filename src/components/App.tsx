@@ -10,6 +10,10 @@ export function App() {
 
     // if (__PLATFORM__ === 'desktop') return <div className="">ISDESKTOPPLATFORM</div>
     // if (__PLATFORM__ === 'mobile') return <div className="">ISMOBILEPLATFORM</div>
+    const increment = () => {
+        setCount((prev) => prev + 1)
+    }
+
     return (
         <div data-testid={'App.DataTestId'}>
             <h1>PLATFORM {__PLATFORM__}</h1>
@@ -22,7 +26,7 @@ export function App() {
             <br />
             <Link to={'/shop'}>Shop</Link>
             {count}
-            <button className={classes.button} onClick={() => setCount((prev) => prev + 1)} >+</button>
+            <button className={classes.button} onClick={increment} >+</button>
             <button onClick={() => setCount((prev) => prev - 1)} ><span>fdsfds</span></button>
             <Outlet />
         </div>
