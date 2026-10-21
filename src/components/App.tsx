@@ -10,7 +10,6 @@ export function App() {
 
     if (__PLATFORM__ === 'desktop') return <div className="">ISDESKTOPPLATFORM</div>
     if (__PLATFORM__ === 'mobile') return <div className="">ISMOBILEPLATFORM</div>
-
     return (
         <div>
             <h1>PLATFORM {__PLATFORM__}</h1>
