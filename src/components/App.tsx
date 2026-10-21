@@ -11,7 +11,7 @@ export function App() {
     // if (__PLATFORM__ === 'desktop') return <div className="">ISDESKTOPPLATFORM</div>
     // if (__PLATFORM__ === 'mobile') return <div className="">ISMOBILEPLATFORM</div>
     return (
-        <div data-testid={'App'}>
+        <div data-testid={'App.DataTestId'}>
             <h1>PLATFORM {__PLATFORM__}</h1>
             <div className="">
                 <img src={avatarPng} alt="" width={100} height={100} />
