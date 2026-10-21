@@ -2,9 +2,9 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { Configuration, ProgressPlugin } from "webpack";
 import { BuildOptions } from "./types/types";
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
-
-export function buildPlugins({ mode, paths }: BuildOptions): Configuration['plugins'] {
+export function buildPlugins({ mode, paths, ananlyzer }: BuildOptions): Configuration['plugins'] {
     const isDev = mode === 'development'
     const isProd = mode === 'production'
 
@@ -20,6 +20,6 @@ export function buildPlugins({ mode, paths }: BuildOptions): Configuration['plug
             chunkFilename: 'css/css/[name].[contenthash:8].css'
         }))
     }
-
+    if (ananlyzer) plugins.push(new BundleAnalyzerPlugin())
     return plugins
 }
