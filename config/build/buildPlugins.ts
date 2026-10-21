@@ -4,7 +4,7 @@ import { Configuration, ProgressPlugin } from "webpack";
 import { BuildOptions } from "./types/types";
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
-export function buildPlugins({ mode, paths, ananlyzer }: BuildOptions): Configuration['plugins'] {
+export function buildPlugins({ mode, paths, analyzer: ananlyzer }: BuildOptions): Configuration['plugins'] {
     const isDev = mode === 'development'
     const isProd = mode === 'production'
 
