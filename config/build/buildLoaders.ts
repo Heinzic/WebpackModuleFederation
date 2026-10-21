@@ -2,6 +2,7 @@ import { ModuleOptions } from "webpack";
 import { BuildOptions } from "./types/types";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshTypeScript from "react-refresh-typescript";
+import { buildBabelLoader } from "./babel/buildBabelLoader";
 
 export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     const isDev = options.mode === 'development'
@@ -30,11 +31,19 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
                 transpileOnly: true,
                 getCustomTransformers: () => ({
                     before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
-                  }),
+                }),
             }
         }],
         exclude: /node_modules/,
     }
 
-    return [sccLoader, tsLoader, assetLoader, svgrLoader]
+    const babelLoader = buildBabelLoader(options)
+
+    return [
+        sccLoader,
+        // tsLoader, 
+        babelLoader,
+        assetLoader,
+        svgrLoader
+    ]
 }

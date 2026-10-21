@@ -11,13 +11,13 @@ export function App() {
     // if (__PLATFORM__ === 'desktop') return <div className="">ISDESKTOPPLATFORM</div>
     // if (__PLATFORM__ === 'mobile') return <div className="">ISMOBILEPLATFORM</div>
     return (
-        <div>
+        <div data-testid={'App'}>
             <h1>PLATFORM {__PLATFORM__}</h1>
             <div className="">
                 <img src={avatarPng} alt="" width={100} height={100} />
                 <img src={avatarJpg} alt="" width={100} height={100} />
             </div>
-            <div className=""> <Calendar width={50} height={50} fill="red"/> </div>
+            <div className=""> <Calendar width={50} height={50} fill="red" /> </div>
             <Link to={'/about'}>About</Link>
             <br />
             <Link to={'/shop'}>Shop</Link>
