@@ -8,8 +8,8 @@ import Calendar from '@/assets/calendar.svg'
 export function App() {
     const [count, setCount] = useState(0)
 
-    if (__PLATFORM__ === 'desktop') return <div className="">ISDESKTOPPLATFORM</div>
-    if (__PLATFORM__ === 'mobile') return <div className="">ISMOBILEPLATFORM</div>
+    // if (__PLATFORM__ === 'desktop') return <div className="">ISDESKTOPPLATFORM</div>
+    // if (__PLATFORM__ === 'mobile') return <div className="">ISMOBILEPLATFORM</div>
     return (
         <div>
             <h1>PLATFORM {__PLATFORM__}</h1>
@@ -17,7 +17,7 @@ export function App() {
                 <img src={avatarPng} alt="" width={100} height={100} />
                 <img src={avatarJpg} alt="" width={100} height={100} />
             </div>
-            <div className=""> <Calendar width={50} height={50} /> </div>
+            <div className=""> <Calendar width={50} height={50} fill="red"/> </div>
             <Link to={'/about'}>About</Link>
             <br />
             <Link to={'/shop'}>Shop</Link>
